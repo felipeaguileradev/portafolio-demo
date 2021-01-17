@@ -50,6 +50,7 @@ body {
   justify-content: inherit;
   height: inherit;
   flex-wrap: inherit;
+  position: relative;
 }
 
 ul {
@@ -75,16 +76,16 @@ h1 {
   font-size: 40px;
   line-height: 1.5em;
   letter-spacing: -0.2px;
-  color: white;
+  color: #edf2f4;
 
   /* text-transform: uppercase; */
   /* text-decoration: none; */
 }
 h1 strong {
-  color: #026fff;
+  color: #2b2d42;
 }
 h2 {
-  color: #026fff;
+  color: #ef233c;
   text-transform: uppercase;
   font-family: "Source Sans Pro", sans-serif;
   font-weight: bold;
@@ -93,7 +94,7 @@ h2 {
 }
 
 .header {
-  background-color: #1d252c;
+  background-color: #d90429;
   color: white;
   display: flex;
   justify-content: space-between;
@@ -114,7 +115,7 @@ h2 {
   height: inherit;
 }
 .header a {
-  color: white;
+  color: #edf2f4;
   text-decoration: none;
   height: inherit;
   display: flex;
@@ -125,7 +126,7 @@ h2 {
 .hero {
   height: 300px;
   /* background-image: url("../img/hero.jpg"); */
-  background-color: #1b2127;
+  background-color: #ef233c;
   /* background-size: 500px 300px;
   background-repeat: no-repeat;
   background-position-x: right; */
@@ -136,24 +137,25 @@ h2 {
 }
 
 .hero-image {
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .portfolio {
   padding: 20px;
-  background-color: #fafafa;
+  background-color: #edf2f4;
 }
 
 .project {
-  border: 1px solid gray;
+  border: 1px solid #8d99ae;
   border-radius: 8px;
   margin-bottom: 15px;
   padding: 20px;
-  background-color: white;
+  background-color: #edf2f4;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  color: #2b2d42;
 }
 .project strong {
   font-family: "Fjalla One", sans-serif;
@@ -183,6 +185,10 @@ h2 {
 .project-imageContainer img {
   max-width: 100%;
 }
+
+main {
+  background-color: #edf2f4;
+}
 .event-list {
   display: flex;
   flex-wrap: wrap;
@@ -198,7 +204,7 @@ h2 {
   border-radius: 10px;
   overflow: hidden;
   flex-shrink: 0;
-  background-color: #f4fbff;
+  background-color: #edf2f4;
 }
 
 .event img {
@@ -214,6 +220,7 @@ h2 {
   top: -40px;
   padding: 20px;
   text-align: center;
+  color: #2b2d42;
 }
 
 .event-description {
@@ -222,16 +229,16 @@ h2 {
 }
 
 .event-url {
-  color: #056fff;
-  border: 1px solid #056fff;
+  color: #ef233c;
+  border: 1px solid #ef233c;
   padding: 5px 20px;
   text-decoration: none;
   border-radius: 5px;
 }
 
 .footer {
-  background-color: #1b2127;
-  color: white;
+  background-color: #2b2d42;
+  color: #edf2f4;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -247,8 +254,8 @@ h2 {
 }
 
 .contact {
-  background-color: #056fff;
-  color: white;
+  background-color: #ef233c;
+  color: #edf2f4;
   height: 150px;
   display: flex;
   align-items: center;
@@ -258,7 +265,7 @@ h2 {
 }
 
 .form-email input {
-  border-color: gray;
+  border-color: #8d99ae;
   border-style: solid;
   border-radius: 5px;
   padding: 10px 20px 10px 25px;
@@ -273,11 +280,11 @@ h2 {
 .form-email button {
   display: block;
   background: transparent;
-  color: white;
+  color: #edf2f4;
   border-radius: 5px;
   border-style: solid;
   width: 100px;
-  border-color: white;
+  border-color: #edf2f4;
   margin-top: 10px;
   padding: 10px 20px;
 }
@@ -348,10 +355,54 @@ h2 {
   font-size: 20px;
 }
 
+.header ul li .border {
+  height: initial;
+  border: 1px solid white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  margin: 14px 0;
+}
+
+.portfolio,
+.eventos {
+  border-left: 10px solid #8d99ae;
+}
+
+h2:before {
+  content: "";
+  position: absolute;
+  left: -25px;
+  top: 5px;
+  font-size: 10px;
+  color: #8d99ae;
+  width: 20px;
+  height: 20px;
+  background-color: #8d99ae;
+  border-radius: 50%;
+}
+
+.project,
+.event {
+  box-shadow: 1px 1px 10px 1px lightgray;
+}
+
 /* desktop firs, comenzar del media query mas grande */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
+  h2:before {
+    content: "";
+    position: absolute;
+    left: -15px;
+    top: 5px;
+    font-size: 20px;
+    color: #8d99ae;
+    width: 20px;
+    height: 20px;
+    background-color: #8d99ae;
+    border-radius: 100%;
+  }
   .container {
     padding: 0 1em;
+    position: relative;
   }
   .hero {
     height: auto;
@@ -374,6 +425,10 @@ h2 {
   }
 }
 @media screen and (max-width: 767px) {
+  h2 {
+    font-size: 1.2em;
+    margin: 0.5em 0;
+  }
   .burger-button {
     display: block;
   }
@@ -399,7 +454,7 @@ h2 {
   }
   .menu {
     position: fixed;
-    background-color: rgba(5, 111, 255, 0.9);
+    background-color: #ef233c;
     z-index: 5;
     top: 0;
     left: -100vw;
@@ -465,7 +520,7 @@ h2 {
   }
   .project-details {
     width: auto;
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .event-detail {
@@ -495,5 +550,11 @@ h2 {
   }
   .hero {
     padding: 2em 1em;
+  }
+
+  .social-link {
+    width: 40px;
+    height: 40px;
+    background-size: 100%;
   }
 }
